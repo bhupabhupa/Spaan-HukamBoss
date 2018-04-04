@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context="com.securityapp.hukamboss.securityapp.SecurityPopup">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ByPass Security Incidence"
+            android:layout_weight="0.5"
+            android:paddingBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:layout_weight="9.5"
+            android:src="@drawable/close1" />
+
+    </LinearLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLable">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:background="@drawable/edit_style"
+            android:id="@+id/bypass_name"/>
+
+        <TextView
+            android:id="@+id/bypass_name_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cannot be blank"
+            style="@style/ErrorText"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLable">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Remark"
+            android:lines="3"
+            android:background="@drawable/edit_style"
+            android:gravity="top"
+            android:id="@+id/bypass_remark"/>
+        <TextView
+            android:id="@+id/bypass_remark_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobile number should be 10 digit"
+            style="@style/ErrorText"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Save"
+            android:id="@+id/bypass_submit"
+            android:layout_marginRight="4dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/blue_curve_button"
+            android:layout_weight="1"/>
+        <!--Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="OK"
+            android:id="@+id/bypass_cancel"
+            android:layout_marginLeft="4dp"
+            android:textColor="#ffffff"
+            android:background="@drawared_curve_buttonttom"
+            android:layout_weight="1"/-->
+    </LinearLayout>
+
+</LinearLayout>

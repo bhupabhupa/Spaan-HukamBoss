@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">HukamBoss SecurityApp</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email"> Email</string>
+    <string name="prompt_login"> User ID</string>
+    <string name="prompt_password"> Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="forget_password">Forgot password? <b>Get Help Signing in</b></string>
+    <string name="new_society">New Society? <b>Please Contact Us</b></string>
+    <string name="new_user">New User?</string>
+    <string name="register_new_society">New Society?</string>
+    <string name="title_activity_visitor_home">VisitorHomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_visitor_home_next">VisitorHomeNextActivity</string>
+
+    <string name="title_new_visitor">New Visitor</string>
+    <string name="title_staff_entry_exit">Staff Entry-Exit</string>
+    <string name="title_sos">SOS</string>
+    <string name="title_visitor_report">Visitor Report</string>
+    <string name="title_material_out">Material Out</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="visitor_fragment">Hello Visitor fragment</string>
+    <string name="staff_fragment">Hello Staff fragment</string>
+
+    <!-- New Visitor Screen -->
+    <string name="vh_new_visitor">New Visitor</string>
+    <string name="vh_gate_no">Gate No</string>
+    <string name="vh_mobile_hint">Mobile No*</string>
+    <string name="name">Name*</string>
+    <string name="address">Address*</string>
+    <string name="organization">Organization Name*</string>
+    <string name="otp">OTP</string>
+    <string name="vh_visitor_pic">Visitor Pic</string>
+
+    <string name="vn_unit_to_visit">Unit to Visit</string>
+    <string name="unit_no">Unit No*</string>
+    <string name="vn_otp">OTP</string>
+    <string name="vn_otp_verify_hint">Verify</string>
+    <string name="vn_otp_verify">Verify</string>
+    <string name="vn_material">Material</string>
+    <string name="vn_vehicle_no">Vehicle No</string>
+    <string name="vn_narration">Narration</string>
+    <string name="vn_past_security_incidence">Past Security Incidence</string>
+    <string name="vn_proof_id">Proof of ID</string>
+    <string name="vn_proof">Number</string>
+
+    <string name="vr_visitor_in">Visitor In</string>
+    <string name="vr_visitor_out">Visitor Out</string>
+    <string name="resident_name">Resident Name</string>
+    <string name="enter_otp">OTP</string>
+
+    <string name="call">Call</string>
+    <string name="person1">Chairman</string>
+    <string name="person2">Secretary</string>
+    <string name="person3">Manager</string>
+    <string name="society_office">Society Office Bearer</string>
+
+    <string name="material_entry">Receive Material for Society</string>
+    <string name="name_of_staff_hint">Type Name Of Staff, Member, Occupant</string>
+    <string name="security">Security Dashboard</string>
+    <string name="title_security_dashboard">Security Dashboard</string>
+    <string name="sd_visitoractivity">Visitor Activity</string>
+    <string name="sd_securityconcerns">Security Concerns</string>
+    <string name="sd_attendance">Security Staff Attendance</string>
+
+    <string name="designation">Designation</string>
+    <string name="staff">Staff</string>
+    <string name="staff_id">Staff ID</string>
+    <string name="staff_name">Staff Name</string>
+
+
+    <string-array name="spinner_item">
+        <item>Select</item>
+    </string-array>
+</resources>

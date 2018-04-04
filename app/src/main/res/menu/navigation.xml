@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/new_visitor"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_new_visitor" />
+
+    <item
+        android:id="@+id/staff_entry_exit"
+        android:icon="@drawable/exit_white"
+        android:title="@string/title_staff_entry_exit" />
+
+    <item
+        android:id="@+id/sos"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_sos" />
+
+    <item
+        android:id="@+id/visitor_report"
+        android:icon="@drawable/report"
+        android:title="@string/title_visitor_report" />
+
+    <!--item
+        android:id="@+id/material_out"
+        android:icon="@drawable/dashboard"
+        android:title="@string/title_material_out" /-->
+
+</menu>

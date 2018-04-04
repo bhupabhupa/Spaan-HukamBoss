@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context="com.securityapp.hukamboss.securityapp.VerifyOTPPopup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify OTP"
+            android:layout_weight="0.5"
+            android:paddingBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:layout_weight="9.5"
+            android:src="@drawable/close1" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLable">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_otp"
+            android:background="@drawable/edit_style"
+            android:id="@+id/edit_otp"/>
+
+        <TextView
+            android:id="@+id/otp_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ErrorText"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/generate_otp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="@drawable/blue_curve_button"
+            android:text="Re-Gen OTP"/>
+
+        <Button
+            android:id="@+id/verify_otp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="@drawable/blue_curve_button"
+            android:text="Verify"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

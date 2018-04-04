@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VisitorHomeFragment">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/parent_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/scroll_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:weightSum="10">
+
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <ImageView
+                    android:id="@+id/photo_capture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="3"
+                    android:text="@string/vh_new_visitor"
+                    android:textSize="18dp"
+                    android:theme="@style/TextLable" />
+
+                <Spinner
+                    android:id="@+id/vh_gate_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/blue_spinner"
+                    android:entries="@array/spinner_item"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextLable"
+                    android:layout_weight="2"
+                    app:errorTextAppearance="@drawable/error_style">
+
+                    <EditText
+                        android:id="@+id/vh_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_style"
+                        android:hint="@string/vh_mobile_hint" />
+                    <!-- android:layout_marginTop="5dip" -->
+
+                    <TextView
+                        android:id="@+id/mobile_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile number should be 10 digit"
+                        style="@style/ErrorText"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/verify_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="8"
+                    android:background="@drawable/blue_curve_button"
+                    android:text="OTP"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+
+
+            <!--LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <Button
+                    android:id="@+id/verify_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/blue_curve_button"
+                    android:text="Generate OTP"
+                    android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/past_incident"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/blue_curve_button"
+                    android:text="Past Incidence"
+                    android:textColor="#ffffff" />
+            </LinearLayout-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:theme="@style/TextLable">
+
+                    <EditText
+                        android:id="@+id/vh_visitor_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_style"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="@string/name"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+                    <!-- android:layout_marginTop="5dip" -->
+
+                    <TextView
+                        android:id="@+id/name_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/ErrorText"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="+"
+                    android:textSize="25dp"
+                    android:theme="@style/TextView" />
+                <!-- android:layout_marginTop="5dp" -->
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:theme="@style/TextLable">
+
+                    <EditText
+                        android:id="@+id/vh_visitor_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/edit_style" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLable">
+
+                <EditText
+                    android:id="@+id/edit1_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_style"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-,0123456789 "
+                    android:hint="@string/address"
+                    android:paddingLeft="4dp"
+                    android:maxLines="1"
+                    android:singleLine="true"/>
+                <!-- android:inputType="textMultiLine"
+                     android:maxLines="10"
+                     android:gravity="start" -->
+                <!-- android:layout_marginTop="5dip" -->
+
+                <TextView
+                    android:id="@+id/address_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ErrorText"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp">
+
+                <Spinner
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/blue_spinner"
+                    android:entries="@array/spinner_item" />
+
+                <TextView
+                    android:id="@+id/visitor_type_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ErrorText"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/orgName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLable">
+
+                <EditText
+                    android:id="@+id/org_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_style"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-,0123456789"
+                    android:hint="@string/organization"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:paddingLeft="4dp" />
+                <!-- android:layout_marginTop="5dip" -->
+
+                <TextView
+                    android:id="@+id/org_name_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ErrorText"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <CheckBox
+                android:id="@+id/society_office"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Society Office bearer" />
+
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/blue_curve_button"
+                android:fitsSystemWindows="true"
+                android:text="Next"
+                android:textColor="#ffffff" />
+            <!-- android:layout_marginTop="10dip" -->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

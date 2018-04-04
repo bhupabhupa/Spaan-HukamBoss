@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context="com.securityapp.hukamboss.securityapp.StaffScanPopup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Result"
+            android:layout_weight="0.5"
+            android:textSize="16dp"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:src="@drawable/close1" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_camera"/>
+
+        <TextView
+            android:id="@+id/scan_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan result"
+            android:paddingBottom="8dp"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <Button
+            android:id="@+id/in_button"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/green_curve_button"
+            android:layout_weight="1"
+            android:text="IN"/>
+        <Button
+            android:id="@+id/out_button"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/red_curve_button"
+            android:layout_weight="1"
+            android:text="OUT"/>
+        <Button
+            android:id="@+id/rescan"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/blue_curve_button"
+            android:layout_weight="1"
+            android:text="Re-Scan"/>
+    </LinearLayout>
+
+</LinearLayout>

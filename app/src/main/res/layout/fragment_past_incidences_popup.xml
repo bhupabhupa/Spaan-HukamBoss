@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context="com.securityapp.hukamboss.securityapp.PastIncidencesPopup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Past Incidences"
+            android:layout_weight="0.5"
+            android:paddingBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:layout_weight="9.5"
+            android:src="@drawable/close1" />
+
+    </LinearLayout>
+
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/no_incidence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Past Incidence found"/>
+
+    <ListView
+        android:id="@+id/pi_list"
+        android:theme="@style/TextLable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    </ListView>
+    <!--Button
+        android:id="@+id/pi_close"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/blue_curve_button"
+        android:text="Close"/-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/bypass_btn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/blue_curve_button"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:text="Bypass"/>
+
+        <Button
+            android:id="@+id/reject_btn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/red_curve_button"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:text="Reject"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

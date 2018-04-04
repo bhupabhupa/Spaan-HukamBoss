@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VisitorNextFragment"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/parent_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical"
+            android:id="@+id/scroll_child">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/society_layout"
+                android:theme="@style/TextLableReadOnly">
+
+                <MultiAutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/society_office"
+                    android:background="@drawable/read_only_style"
+                    android:id="@+id/society_office"/>
+                <!-- android:layout_marginTop="5dip"
+                    android:paddingLeft="5dp" -->
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/unit_no_layout"
+                android:theme="@style/TextLable">
+
+                <MultiAutoCompleteTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/unit_no"
+                    android:background="@drawable/edit_style"
+                    android:id="@+id/auto3_2"/>
+                <!-- android:layout_marginTop="5dip"
+                    android:paddingLeft="5dp" -->
+                <TextView
+                    android:id="@+id/unit_no_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ErrorText"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/resident_name_layout"
+                android:theme="@style/TextLableReadOnly">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/resident_name"
+                    android:background="@drawable/read_only_style"
+                    android:inputType="none"
+                    android:id="@+id/edit3_1"/>
+                <!-- android:layout_marginTop="5dip"
+                    android:paddingLeft="5dp"-->
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <!--CheckBox android:id="@+id/checkbox_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Material"/-->
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLable">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Vehicle No"
+                    android:background="@drawable/edit_style"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 "
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:id="@+id/edit1_11"/>
+                <!-- android:layout_marginTop="5dip"
+                    android:paddingLeft="5dp" -->
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:theme="@style/TextLable">
+                <Spinner
+                    android:id="@+id/vehicle_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/blue_spinner"
+                    android:entries="@array/spinner_item" />
+            </android.support.design.widget.TextInputLayout -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <Spinner
+                    android:id="@+id/vehicle_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/blue_spinner"
+                    android:entries="@array/spinner_item" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:theme="@style/TextView"
+                    android:text="+"
+                    android:textSize="25dp" />
+
+
+                <Spinner
+                    android:id="@+id/vehicle_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/blue_spinner"
+                    android:layout_weight="7"
+                    android:entries="@array/spinner_item" />
+
+            </LinearLayout>
+
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLable">
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Narration"
+                    android:background="@drawable/edit_style"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:id="@+id/edit3_4"/>
+                <!-- android:layout_marginTop="5dip"
+                    android:paddingLeft="5dp" -->
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+                <Button
+                    android:id="@+id/vn_view_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Past Incidences" />
+                <Spinner
+                    android:id="@+id/vn_past_security_incidence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:background="@mipmap/edit"
+                    android:entries="@array/spinner_item" />
+            </LinearLayout -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:weightSum="10">
+                <!-- android:layout_marginTop="5dip" -->
+
+                <Spinner
+                    android:id="@+id/govtId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/blue_spinner"
+                    android:entries="@array/spinner_item"
+                    android:layout_weight="4"/>
+
+                <!-- android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dip" -->
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextLable"
+                    android:layout_weight="6">
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Number"
+                        android:background="@drawable/edit_style"
+                        android:id="@+id/edit5_2"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/panel4"
+                android:layout_marginTop="16dp"
+                android:weightSum="3">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:text="Back"
+                    android:background="@drawable/blue_curve_button"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/back_button"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:text="Submit"
+                    android:background="@drawable/green_curve_button"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:textColor="#ffffff"
+                    android:id="@+id/submit_button"
+                    android:layout_weight="1"/>
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:text="Material"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/red_curve_button"
+                    android:textColor="#ffffff"
+                    android:id="@+id/material_button"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
