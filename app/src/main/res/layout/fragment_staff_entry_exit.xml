@@ -26,6 +26,8 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:weightSum="10">
                 <com.android.volley.toolbox.NetworkImageView
                     android:id="@+id/photo"

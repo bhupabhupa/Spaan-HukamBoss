@@ -1162,11 +1162,13 @@ public class VisitorHomeFragment extends Fragment {
                                     visitor_name.setText(resource.getString(Constants.VISITOR_NAME));
                                     vhfModel.setVisitorAddress(resource.getString(Constants.VISITOR_ADDRESS));
                                     address.setText(resource.getString(Constants.VISITOR_ADDRESS));
+                                    address.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                                    addressError.setVisibility(View.GONE);
 
                                     photo.setVisibility(View.VISIBLE);
                                     photoClick.setVisibility(View.GONE);
 
-                                    type.requestFocus();
+                                    //type.requestFocus();
 
                                     //displayPastIncidences(mobileNo);
                                     getIncidence(accessToken, societyId, mobileNo);

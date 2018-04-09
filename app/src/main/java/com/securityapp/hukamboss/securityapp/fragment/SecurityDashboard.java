@@ -68,6 +68,7 @@ public class SecurityDashboard extends Fragment implements BaseActivityListener 
     private static final String ARG_PARAM2 = "param2";
 
     String[] gateItems = new String[]{"--Gate No--", "1", "2", "3"};
+
     Spinner gateNo,securityPerson, filterDays;
     String[] securityPersonItems = new String[]{"--Select Security--", "Mr. Umesh", "Mr. Rajesh", "Mr. Suresh"};
 

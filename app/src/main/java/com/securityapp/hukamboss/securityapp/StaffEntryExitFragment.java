@@ -80,6 +80,7 @@ public class StaffEntryExitFragment extends Fragment implements ZXingScannerView
     private static final int CAMERA_PREVIEW_POPUP = 3;
     String[] gateItems = new String[]{"Gate No", "1", "2", "3"};
     private String mobileErrorTxt = "Mobile No must be 10 digits";
+    private String mobileBlankErrorTxt = "Mobile No field cannot be blank";
     private String staffRemarkErrorTxt = "Please add a remark";
 
 
@@ -137,6 +138,8 @@ public class StaffEntryExitFragment extends Fragment implements ZXingScannerView
         staffNameError.setVisibility(View.GONE);
         staffDesError.setVisibility(View.GONE);
         staffRemarkError.setVisibility(View.GONE);
+
+        staffRemark.setOnFocusChangeListener(focusChangeListener);
 
         mimageLoader = VolleyController.getInstance(getActivity().getApplicationContext()).getImageLoader();
 
@@ -284,18 +287,38 @@ public class StaffEntryExitFragment extends Fragment implements ZXingScannerView
 
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            if (hasFocus) {
-                mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                mobileNoError.setVisibility(View.GONE);
+            switch (v.getId()) {
+                case R.id.staff_mobile:
+                    if (hasFocus) {
+                        mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                        mobileNoError.setVisibility(View.GONE);
+                    }
+                    if (!hasFocus && (mobileNo.getText().toString().length() == 0)) {
+                        mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.error, 0);
+                        mobileNoError.setText(mobileBlankErrorTxt);
+                        mobileNoError.setVisibility(View.VISIBLE);
+                    } else if (!hasFocus && (mobileNo.getText().toString().length() != 10)) {
+                        mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.error, 0);
+                        mobileNoError.setText(mobileErrorTxt);
+                        mobileNoError.setVisibility(View.VISIBLE);
+                    }
+                    if ((!hasFocus) && mobileNo.getText().toString().length() == 10) {
+                        getStaffDetails(mobileNo.getText().toString());
+                    }
+                    break;
+                case R.id.staff_remark:
+                    if (hasFocus) {
+                        staffRemark.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                        staffRemarkError.setVisibility(View.GONE);
+                    }
+                    if (!hasFocus && (staffRemark.getText().toString().length() == 0)) {
+                        staffRemark.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.error, 0);
+                        staffRemarkError.setText(staffRemarkErrorTxt);
+                        staffRemarkError.setVisibility(View.VISIBLE);
+                    }
+                    break;
             }
-            if (!hasFocus && (mobileNo.getText().toString().length() != 10)) {
-                mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.error, 0);
-                mobileNoError.setText(mobileErrorTxt);
-                mobileNoError.setVisibility(View.VISIBLE);
-            }
-            if ((!hasFocus) && mobileNo.getText().toString().length() == 10) {
-                getStaffDetails(mobileNo.getText().toString());
-            }
+
         }
     };
 
@@ -430,12 +453,19 @@ public class StaffEntryExitFragment extends Fragment implements ZXingScannerView
         public void onClick(View view) {
             boolean isValidData = true;
 
-            if (mobileNo.getEditableText().toString().length() != 10) {
+            if (mobileNo.getEditableText().toString().length() == 0) {
+                isValidData = false;
+                mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.error, 0);
+                mobileNoError.setText(mobileBlankErrorTxt);
+                mobileNoError.setVisibility(View.VISIBLE);
+                mobileNo.clearFocus();
+
+            } else if (mobileNo.getEditableText().toString().length() != 10) {
                 isValidData = false;
                 mobileNo.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.error, 0);
                 mobileNoError.setText(mobileErrorTxt);
                 mobileNoError.setVisibility(View.VISIBLE);
-
+                mobileNo.clearFocus();
             }
 
             if (staffRemark.getEditableText().toString().length() == 0) {

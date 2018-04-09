@@ -1,6 +1,7 @@
 package com.securityapp.hukamboss.securityapp.adapters;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -53,6 +54,7 @@ public class EmergencyDirectoryAdapter extends ArrayAdapter<EmergencyDirectoryMo
             viewHolder.name = (TextView)convertView.findViewById(R.id.name);
             viewHolder.address = (TextView)convertView.findViewById(R.id.address);
             viewHolder.phoneNo = (TextView)convertView.findViewById(R.id.phone_no);
+            viewHolder.phoneNo.setPaintFlags(viewHolder.phoneNo.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
             viewHolder.phoneNo.setOnClickListener(new View.OnClickListener() {
                 @Override

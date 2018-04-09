@@ -116,8 +116,8 @@ public class EmergencyDirectoryPopup extends DialogFragment {
                 EmergencyDirectoryModel dataModel= dataModels.get(position);
                 displayDialerPhone(dataModel.getPhoneNo());
 
-                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getAddress(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
+                /*Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getAddress(), Snackbar.LENGTH_LONG)
+                        .setAction("No action", null).show();*/
             }
         });
     }
